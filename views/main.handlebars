@@ -1,0 +1,67 @@
+<main class="app-container">
+  <header class="app-header">
+    <h1>Phonebook</h1>
+  </header>
+  <div class="all-contacts-container open">
+    <legend class="drop-menu">All Contacts &darr;</legend>
+    <table class="contacts-table hidden">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each contacts}}
+          <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.number}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  <div class="form-container">
+    <legend>New Contacts</legend>
+    <form class="form-contacts" action="/add" method="POST">
+      <div class="form-group">
+        <label for="name" class="name-label">Name</label>
+        <div class="name-input">
+          <input
+            type="text"
+            autofocus="autofocus"
+            required="required"
+            name="name"
+            title="Name"
+            class="form-control"
+            id="name"
+            autocomplete="off"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="number" class="number-label">Number</label>
+        <div class="number-input">
+          <input
+            type="number"
+            autofocus="autofocus"
+            name="number"
+            required="required"
+            title="Number"
+            class="form-control"
+            id="number"
+            autocomplete="off"
+          />
+        </div>
+      </div>
+      <div class="from-group">
+        <div class="submit-btn-label">
+          <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+      </div>
+    </form>
+    <footer>
+      <p>&copy; Created by Velislav Lonev.</p>
+    </footer>
+  </div>
+</main>
